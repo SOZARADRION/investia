@@ -41,6 +41,15 @@ This command will move the starter code to the **app-example** directory and cre
 - If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
 - Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
 
+## Pendências
+
+### Segurança: avisos do `npm audit`
+
+- O `npm audit` apresenta **oito avisos** (5 baixos, 3 altos) associados a `deepmerge` e `zod`, dependências transitivas da cadeia do Expo.
+- A simulação de `npm audit fix` mantém os avisos.
+- A opção `npm audit fix --force` propõe um downgrade incompatível para o Expo 51.
+- Decisão atual: **não** aplicar `overrides`, `--force` nem troca de versão principal do Zod. Reavaliar quando o Expo publicar versões corrigidas da cadeia.
+
 ## Learn more
 
 To learn more about developing your project with Expo, look at the following resources:
