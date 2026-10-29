@@ -1,65 +1,31 @@
-# Welcome to your Expo app 👋
+# InvestIA · Aplicativo mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+React Native + Expo SDK 58 + TypeScript + Expo Router.
 
-## Get started
+Consulte a [apresentação do projeto](../README.md) para funcionalidades, arquitetura e roadmap.
 
-1. Install dependencies
+## Executar
 
-   ```bash
-   npm install
-   ```
+Na pasta mobile:
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```powershell
+npm ci
+npm start -- --lan --port 8082
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Abra o endereço do terminal no Expo Go compatível com SDK 58. Computador e celular devem estar na mesma rede Wi-Fi. Use somente dados fictícios.
 
-### Other setup steps
+## Verificar
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+```powershell
+npx tsc --noEmit
+npm run lint
+```
 
-## Pendências
+- [Entrega A02 e validação no Android](docs/a02.md)
+- [Pendências técnicas e registro de segurança](../docs/technical-notes.md)
+- [Licença do template Expo](LICENSE)
 
-### Segurança: avisos do `npm audit`
+Não execute reset-project para iniciar o aplicativo: esse utilitário do template reorganiza as telas.
 
-- O `npm audit` apresenta **oito avisos** (5 baixos, 3 altos) associados a `deepmerge` e `zod`, dependências transitivas da cadeia do Expo.
-- A simulação de `npm audit fix` mantém os avisos.
-- A opção `npm audit fix --force` propõe um downgrade incompatível para o Expo 51.
-- Decisão atual: **não** aplicar `overrides`, `--force` nem troca de versão principal do Zod. Reavaliar quando o Expo publicar versões corrigidas da cadeia.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+O login é simulado. Firebase, FastAPI, IA e cálculos financeiros ainda não foram implementados.
