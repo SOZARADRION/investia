@@ -34,7 +34,7 @@ A proposta é reunir explicações, conversas educativas e simulações em uma e
 | Simulador | Aporte, prazo e taxa hipotética com validação de preenchimento |
 | Perfil | Informações da demonstração e saída com limpeza dos dados das abas |
 
-As quatro abas acompanham o tema claro ou escuro do aparelho. A revisão visual de temas e fonte ampliada ainda está pendente.
+As quatro abas acompanham o tema claro ou escuro do aparelho. A troca de tema, a fonte ampliada em dois níveis e a navegação pelo botão Voltar foram validadas manualmente no Android em 30/10/2026.
 
 ## Tecnologias
 
@@ -86,7 +86,7 @@ investia/
 
 - [x] A01 — Boas-vindas e acesso simulado.
 - [x] A02 — Quatro abas e validação funcional principal no Android.
-- [ ] Revisar temas, fonte ampliada e navegação pelo botão Voltar.
+- [x] Revisar temas, fonte ampliada e navegação pelo botão Voltar no Android.
 - [ ] Ampliar os casos de validação do Simulador.
 - [ ] Integrar autenticação real com Firebase.
 - [ ] Implementar API FastAPI e cálculos determinísticos com testes.

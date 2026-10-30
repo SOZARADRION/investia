@@ -17,7 +17,7 @@ publicar uma versão do aplicativo.
 - Chat sem modelo de IA ou histórico persistente.
 - Simulador sem motor de cálculo financeiro.
 - iOS e web ainda não validados pelo autor nesta entrega.
-- Temas, fonte ampliada e casos adicionais do formulário aguardam revisão.
+- Casos adicionais do formulário (negativos, texto e prazo fracionário) aguardam revisão. Temas, fonte ampliada e botão Voltar foram validados no Android em 30/10/2026.
 
 Não use o script reset-project para executar o aplicativo: ele reorganiza as
 telas do projeto e pertence ao template original do Expo.
