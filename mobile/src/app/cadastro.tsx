@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { router } from 'expo-router';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { auth } from '@/services/firebase';
+import { authErrorMessage } from '@/services/auth-errors';
+import { useAuthSession } from '@/components/auth-session';
 import {
   Alert,
   KeyboardAvoidingView,
@@ -17,8 +21,11 @@ export default function CadastroScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [busy, setBusy] = useState(false);
+  const { setCreating } = useAuthSession();
 
-  function handleSignUp() {
+  async function handleSignUp() {
+    if (busy) return;
     if (!name.trim() || !email.trim() || !password || !confirmPassword) {
       Alert.alert(
         'Preencha os campos',
@@ -37,12 +44,17 @@ export default function CadastroScreen() {
       return;
     }
 
-    Alert.alert(
-      'Cadastro simulado',
-      'Este é um ambiente de demonstração. Nenhuma conta foi criada e nenhum dado foi salvo.',
-      [{ text: 'OK', onPress: () => router.replace('/login') }],
-      { cancelable: false }
-    );
+    setBusy(true);
+    setCreating(true);
+    try {
+      const result = await createUserWithEmailAndPassword(auth, email.trim(), password);
+      try { await updateProfile(result.user, { displayName: name.trim() }); }
+      catch { Alert.alert('Conta criada', 'Sua conta foi criada, mas o nome não pôde ser salvo. Você já pode usar o aplicativo.'); }
+      setPassword('');
+      setConfirmPassword('');
+    } catch (error) {
+      Alert.alert('Não foi possível criar a conta', authErrorMessage(error));
+    } finally { setBusy(false); setCreating(false); }
   }
 
   return (
@@ -59,7 +71,7 @@ export default function CadastroScreen() {
           <Text style={styles.title}>Criar conta no InvestIA</Text>
 
           <Text style={styles.description}>
-            Use dados fictícios para testar esta tela.
+            Nome, e-mail e credenciais serão enviados ao Firebase para criar sua conta de teste. Use uma senha exclusiva para este projeto.
           </Text>
 
           <Text style={styles.label}>Nome</Text>
@@ -115,14 +127,17 @@ export default function CadastroScreen() {
           <Pressable
             accessibilityRole="button"
             onPress={handleSignUp}
+            disabled={busy}
+            accessibilityState={{ disabled: busy, busy }}
             style={styles.button}
           >
-            <Text style={styles.buttonText}>Criar conta</Text>
+            <Text style={styles.buttonText}>{busy ? 'Criando conta…' : 'Criar conta'}</Text>
           </Pressable>
 
           <Pressable
             accessibilityRole="button"
             onPress={() => router.back()}
+            disabled={busy}
             style={styles.backButton}
           >
             <Text style={styles.backText}>Voltar</Text>

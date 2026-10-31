@@ -9,6 +9,6 @@ export default function PainelScreen() {
       <Button label="Conhecer Simulador" onPress={() => router.navigate('/simulador')} />
     </Card>
     <Card title="Um conceito por vez"><Body>Diversificar é distribuir os investimentos entre alternativas. Isso pode reduzir a concentração de riscos, mas não elimina a possibilidade de perdas.</Body></Card>
-    <Body>Ambiente de demonstração. Nenhuma conta foi autenticada. Não há cotações, cálculos ou análises reais nesta etapa.</Body>
+    <Body>Sua conta usa autenticação Firebase. As ferramentas continuam em demonstração: não há cotações, cálculos ou análises reais nesta etapa.</Body>
   </Screen>;
 }

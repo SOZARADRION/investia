@@ -12,7 +12,7 @@ export function Screen({ title, children }: PropsWithChildren<{ title: string }>
   return <SafeAreaView edges={['top', 'left', 'right']} style={{ flex: 1, backgroundColor: c.background }}>
     <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={styles.page}>
-        <Text style={{ color: c.accent, fontSize: 16, fontWeight: '700' }}>InvestIA · Demonstração</Text>
+        <Text style={{ color: c.accent, fontSize: 16, fontWeight: '700' }}>InvestIA · Em desenvolvimento</Text>
         <Text accessibilityRole="header" style={{ color: c.text, fontSize: 30, lineHeight: 38, fontWeight: '700' }}>{title}</Text>
         {children}
         <Body>Conteúdo educativo. Não constitui recomendação de investimento.</Body>

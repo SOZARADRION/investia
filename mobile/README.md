@@ -13,7 +13,7 @@ npm ci
 npm start -- --lan --port 8082
 ```
 
-Abra o endereço do terminal no Expo Go compatível com SDK 58. Computador e celular devem estar na mesma rede Wi-Fi. Use somente dados fictícios.
+Abra o endereço do terminal no Expo Go compatível com SDK 58. Computador e celular devem estar na mesma rede Wi-Fi. O cadastro cria uma conta de teste no Firebase; use senha exclusiva.
 
 ## Verificar
 
@@ -28,4 +28,4 @@ npm run lint
 
 Não execute reset-project para iniciar o aplicativo: esse utilitário do template reorganiza as telas.
 
-O login é simulado. Firebase, FastAPI, IA e cálculos financeiros ainda não foram implementados.
+Cadastro, login e saída usam Firebase Authentication. Consulte [Entrega B01](docs/b01.md) para os testes pendentes no Android. Firestore, FastAPI, IA e cálculos financeiros ainda não foram implementados.

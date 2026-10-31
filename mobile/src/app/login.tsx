@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { router } from 'expo-router';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '@/services/firebase';
+import { authErrorMessage } from '@/services/auth-errors';
 import {
   Alert,
   KeyboardAvoidingView,
@@ -16,14 +19,23 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [busy, setBusy] = useState(false);
 
-  function handleLogin() {
+  async function handleLogin() {
+    if (busy) return;
     if (!email.trim() || !password.trim()) {
       Alert.alert('Preencha os campos', 'Informe o e-mail e a senha.');
       return;
     }
 
-       router.replace('/inicio');
+    setBusy(true);
+    try {
+      await signInWithEmailAndPassword(auth, email.trim(), password);
+      setPassword('');
+      // A mudança de sessão libera as abas e remove as telas de acesso.
+    } catch (error) {
+      Alert.alert('Não foi possível entrar', authErrorMessage(error));
+    } finally { setBusy(false); }
   }
 
   return (
@@ -40,7 +52,7 @@ export default function LoginScreen() {
           <Text style={styles.title}>Entrar no InvestIA</Text>
 
           <Text style={styles.description}>
-            Use dados fictícios para testar esta tela.
+            Entre com uma conta criada neste projeto InvestIA.
           </Text>
 
           <Text style={styles.label}>E-mail</Text>
@@ -60,7 +72,7 @@ export default function LoginScreen() {
           <TextInput
             accessibilityLabel="Senha"
             style={styles.input}
-            placeholder="Digite uma senha fictícia"
+            placeholder="Digite sua senha"
             placeholderTextColor="#94A3B8"
             secureTextEntry
             autoCapitalize="none"
@@ -72,14 +84,17 @@ export default function LoginScreen() {
           <Pressable
             accessibilityRole="button"
             onPress={handleLogin}
+            disabled={busy}
+            accessibilityState={{ disabled: busy, busy }}
             style={styles.button}
           >
-            <Text style={styles.buttonText}>Entrar</Text>
+            <Text style={styles.buttonText}>{busy ? 'Entrando…' : 'Entrar'}</Text>
           </Pressable>
 
           <Pressable
             accessibilityRole="button"
             onPress={() => router.back()}
+            disabled={busy}
             style={styles.backButton}
           >
             <Text style={styles.backText}>Voltar</Text>

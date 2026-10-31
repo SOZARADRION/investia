@@ -21,14 +21,14 @@ O InvestIA nasce de uma pergunta: como tornar o aprendizado sobre investimentos 
 
 A proposta é reunir explicações, conversas educativas e simulações em uma experiência simples. O desenvolvimento acontece em pequenas entregas, com testes no Android antes de avançar para novas integrações.
 
-**Estado atual:** protótipo local com navegação e dados de demonstração. Login e cadastro são simulados; o Chat usa uma resposta fixa; o Simulador confere campos, mas ainda não calcula resultados. Não há conexão com bancos, IA ou dados de mercado.
+**Estado atual:** protótipo local com navegação e dados de demonstração. Cadastro e login agora usam Firebase Authentication, com validação no Android pendente; o Chat usa uma resposta fixa; o Simulador confere campos, mas ainda não calcula resultados. Não há conexão com bancos, IA ou dados de mercado.
 
 ## O que já funciona
 
 | Área | Experiência disponível |
 | --- | --- |
 | Boas-vindas | Apresentação e acesso ao login e cadastro |
-| Login e cadastro | Formulários simulados com validações |
+| Login e cadastro | Firebase Authentication por e-mail/senha; validação no Android pendente |
 | Início | Conteúdo educativo e atalhos para as ferramentas |
 | Chat | Pergunta de exemplo, resposta fixa e limpeza da conversa |
 | Simulador | Aporte, prazo e taxa hipotética com validação de preenchimento |
@@ -38,9 +38,9 @@ As quatro abas acompanham o tema claro ou escuro do aparelho. A troca de tema, a
 
 ## Tecnologias
 
-**Implementadas:** React Native, Expo SDK 58, TypeScript em modo estrito e Expo Router.
+**Implementadas:** React Native, Expo SDK 58, TypeScript em modo estrito, Expo Router e integração Firebase Authentication.
 
-**Planejadas:** Firebase para autenticação e dados; Python com FastAPI para regras de negócio e cálculos. Essas integrações ainda não foram implementadas.
+**Planejadas:** Firestore para dados e Python com FastAPI para regras de negócio e cálculos. Essas integrações ainda não foram implementadas.
 
 ## Executar no Windows
 
@@ -53,7 +53,7 @@ npm ci
 npm start -- --lan --port 8082
 ```
 
-Abra no Expo Go o endereço exibido no terminal. Use somente dados fictícios nos formulários. Se o repositório for privado, o clone exige uma conta com acesso.
+Abra no Expo Go o endereço exibido no terminal. O cadastro cria uma conta no Firebase. Use uma conta de teste e uma senha exclusiva; não compartilhe senhas no chat. Se o repositório for privado, o clone exige uma conta com acesso.
 
 Para quem já tem o projeto no computador, comece em `investia/mobile`; não é necessário clonar novamente.
 
@@ -88,7 +88,7 @@ investia/
 - [x] A02 — Quatro abas e validação funcional principal no Android.
 - [x] Revisar temas, fonte ampliada e navegação pelo botão Voltar no Android.
 - [ ] Ampliar os casos de validação do Simulador.
-- [ ] Integrar autenticação real com Firebase.
+- [ ] Validar no Android a integração Firebase Authentication já implementada.
 - [ ] Implementar API FastAPI e cálculos determinísticos com testes.
 - [ ] Integrar funcionalidades de IA após validar a base do produto.
 
@@ -96,7 +96,7 @@ investia/
 
 O InvestIA tem finalidade educativa. O protótipo não oferece recomendações personalizadas nem executa investimentos. Não informe senhas reais, dados bancários ou informações pessoais nos exemplos.
 
-Credenciais de servidor e chaves privadas não devem ser incluídas no aplicativo ou no Git. A autenticação atual é apenas uma simulação de navegação.
+Credenciais de servidor e chaves privadas não devem ser incluídas no aplicativo ou no Git. A autenticação usa o SDK Firebase; regras de dados e API serão implementadas em etapas futuras.
 
 ## Autor
 
