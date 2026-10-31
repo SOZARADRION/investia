@@ -3,6 +3,8 @@ import { DemoSessionProvider } from '@/components/demo-session';
 import { AuthSessionProvider, useAuthSession } from '@/components/auth-session';
 import { ActivityIndicator, View } from 'react-native';
 
+export const unstable_settings = { anchor: 'index' };
+
 export default function RootLayout() {
   return <AuthSessionProvider><DemoSessionProvider><Navigation /></DemoSessionProvider></AuthSessionProvider>;
 }
@@ -18,8 +20,8 @@ function Navigation() {
         contentStyle: { backgroundColor: '#0F172A' },
       }}
     >
+      <Stack.Screen name="index" />
       <Stack.Protected guard={!authenticated}>
-        <Stack.Screen name="index" />
         <Stack.Screen name="login" />
         <Stack.Screen name="cadastro" />
       </Stack.Protected>

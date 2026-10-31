@@ -1,8 +1,11 @@
-import { Link } from 'expo-router';
+import { Link, Redirect } from 'expo-router';
+import { useAuthSession } from '@/components/auth-session';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function WelcomeScreen() {
+  const { user, creating } = useAuthSession();
+  if (user && !creating) return <Redirect href="/painel" />;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
