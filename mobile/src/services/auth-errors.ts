@@ -11,6 +11,8 @@ export function authErrorMessage(error: unknown): string {
     case 'auth/network-request-failed': return 'Não foi possível conectar. Confira sua internet e tente novamente.';
     case 'auth/too-many-requests': return 'Muitas tentativas. Aguarde um pouco antes de tentar novamente.';
     case 'auth/user-disabled': return 'Não foi possível acessar esta conta.';
+    case 'auth/requires-recent-login':
+    case 'auth/user-token-expired': return 'Sua sessão precisa ser renovada. Saia da conta e entre novamente.';
     case 'auth/operation-not-allowed': return 'O login por e-mail e senha não está habilitado no projeto.';
     default: return 'Não foi possível concluir. Tente novamente em instantes.';
   }

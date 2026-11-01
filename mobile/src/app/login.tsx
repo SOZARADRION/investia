@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { router } from 'expo-router';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
+import { useCooldown } from '@/hooks/use-cooldown';
 import { auth } from '@/services/firebase';
 import { authErrorMessage } from '@/services/auth-errors';
 import {
@@ -20,9 +21,33 @@ export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false);
+  const [resetting, setResetting] = useState(false);
+  const { remaining, start } = useCooldown();
+
+  async function resetPassword() {
+    if (busy || resetting || remaining > 0) return;
+    const address = email.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) {
+      Alert.alert('Informe seu e-mail', 'Preencha um e-mail válido no campo E-mail para recuperar a senha.');
+      return;
+    }
+    setResetting(true);
+    try {
+      await sendPasswordResetEmail(auth, address);
+      resetRequested();
+    } catch (error) {
+      if ((error as { code?: string }).code === 'auth/user-not-found') resetRequested();
+      else Alert.alert('Não foi possível solicitar a recuperação', authErrorMessage(error));
+    } finally { setResetting(false); }
+  }
+
+  function resetRequested() {
+    start();
+    Alert.alert('Solicitação recebida', 'Se houver uma conta para esse e-mail, você receberá um link para redefinir a senha. Confira também o spam. Depois, volte ao InvestIA e entre com a nova senha.');
+  }
 
   async function handleLogin() {
-    if (busy) return;
+    if (busy || resetting) return;
     if (!email.trim() || !password.trim()) {
       Alert.alert('Preencha os campos', 'Informe o e-mail e a senha.');
       return;
@@ -84,17 +109,24 @@ export default function LoginScreen() {
           <Pressable
             accessibilityRole="button"
             onPress={handleLogin}
-            disabled={busy}
-            accessibilityState={{ disabled: busy, busy }}
+            disabled={busy || resetting}
+            accessibilityState={{ disabled: busy || resetting, busy }}
             style={styles.button}
           >
             <Text style={styles.buttonText}>{busy ? 'Entrando…' : 'Entrar'}</Text>
           </Pressable>
 
+          <Pressable accessibilityRole="button" onPress={resetPassword}
+            disabled={busy || resetting || remaining > 0}
+            accessibilityState={{ disabled: busy || resetting || remaining > 0, busy: resetting }}
+            style={styles.backButton}>
+            <Text style={styles.backText}>{resetting ? 'Solicitando recuperação…' : remaining > 0 ? `Reenviar recuperação em ${remaining}s` : 'Esqueci minha senha'}</Text>
+          </Pressable>
+
           <Pressable
             accessibilityRole="button"
             onPress={() => router.back()}
-            disabled={busy}
+            disabled={busy || resetting}
             style={styles.backButton}
           >
             <Text style={styles.backText}>Voltar</Text>

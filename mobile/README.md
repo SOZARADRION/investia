@@ -29,3 +29,5 @@ npm run lint
 Não execute reset-project para iniciar o aplicativo: esse utilitário do template reorganiza as telas.
 
 Cadastro, login e saída usam Firebase Authentication. Consulte [Entrega B01](docs/b01.md) para os testes manuais validados no Android. Firestore, FastAPI, IA e cálculos financeiros ainda não foram implementados.
+
+[Entrega B02](docs/b02.md): recuperação de senha e verificação de e-mail implementadas; testes no aparelho pendentes.

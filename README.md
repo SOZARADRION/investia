@@ -29,6 +29,7 @@ A proposta é reunir explicações, conversas educativas e simulações em uma e
 | --- | --- |
 | Boas-vindas | Apresentação e acesso ao login e cadastro |
 | Login e cadastro | Firebase Authentication por e-mail/senha; fluxos manuais B01 validados no Android |
+| Recuperação e verificação | Links por e-mail do Firebase; B02 implementada, aguardando testes no Android |
 | Início | Conteúdo educativo e atalhos para as ferramentas |
 | Chat | Pergunta de exemplo, resposta fixa e limpeza da conversa |
 | Simulador | Aporte, prazo e taxa hipotética com validação de preenchimento |
@@ -89,6 +90,7 @@ investia/
 - [x] Revisar temas, fonte ampliada e navegação pelo botão Voltar no Android.
 - [ ] Ampliar os casos de validação do Simulador.
 - [x] Validar no Android os fluxos da B01 com Firebase Authentication.
+- [ ] Validar recuperação de senha e verificação de e-mail da [B02](mobile/docs/b02.md).
 - [ ] Implementar API FastAPI e cálculos determinísticos com testes.
 - [ ] Integrar funcionalidades de IA após validar a base do produto.
 
