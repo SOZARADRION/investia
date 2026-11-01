@@ -66,16 +66,21 @@ TypeScript e lint passaram, inclusive após a correção da rota inicial.
 A exportação Android passou com Firebase antes dessa última correção.
 Os testes manuais de conta ainda não cobrem todos os fluxos.
 
+## Atualização — 01/11/2026
+
+O usuário confirmou no Android a restauração da conta ao reabrir o projeto,
+a saída com retorno às boas-vindas e a permanência desconectado após reabrir.
+Voltar após sair levou ao Expo Go, sem acesso às abas protegidas.
+Uma senha incorreta foi rejeitada; a senha correta permitiu nova entrada,
+com nome e e-mail exibidos no Perfil.
+
 ## Próximo passo exato
 
 Continuar os testes no Android, um por vez:
 
-1. No Perfil, tocar em **Sair da conta** e conferir retorno às boas-vindas.
-2. Usar Voltar e conferir que as abas não reabrem sem autenticação.
-3. Entrar novamente com a conta já criada e conferir o Perfil.
-4. Fechar completamente o Expo Go, reabrir o projeto e conferir a sessão.
-5. Sair e tentar entrar com senha errada: deve rejeitar o acesso.
-6. Conferir cadastro duplicado e erro de conexão.
+1. Conferir cadastro duplicado: rejeitar o e-mail já cadastrado sem alterar a conta.
+2. Conferir falha de rede: mensagem de erro sem liberar acesso indevido.
+3. Conferir limpeza do Chat e Simulador após sair da conta real e entrar novamente.
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
 Não recriar a conta de teste apenas para repetir um login.
