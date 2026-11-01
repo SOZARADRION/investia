@@ -84,11 +84,13 @@ A B01 está validada nos testes manuais planejados no Android.
 
 Continuar os testes no Android, um por vez:
 
-1. Concluir casos adicionais da B02: senha antiga rejeitada após redefinição,
-   e-mail vazio/inválido na recuperação, falha de rede e liberação de reenvio.
+1. Após a pausa para almoço de 01/11/2026, retomar a B02 pelos testes de
+   recuperação sem internet e liberação do reenvio após 60 segundos.
 2. Os fluxos principais já foram confirmados em 01/11/2026: Perfil exibiu
    E-mail verificado após confirmar pelo link; recuperação chegou ao spam,
    senha foi redefinida e a entrada com a nova senha funcionou.
+   O usuário também confirmou rejeição da senha antiga e os avisos para
+   e-mail vazio e inválido na recuperação.
 3. Consulte mobile/docs/b02.md e registre os casos restantes antes de avançar.
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
