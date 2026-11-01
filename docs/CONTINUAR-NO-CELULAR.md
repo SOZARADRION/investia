@@ -84,11 +84,12 @@ A B01 está validada nos testes manuais planejados no Android.
 
 Continuar os testes no Android, um por vez:
 
-1. Testar B02, implementada em 01/11/2026: no Perfil, solicitar verificação
-   de e-mail, abrir o link e tocar em Já confirmei meu e-mail.
-2. Testar Esqueci minha senha na tela Entrar, redefinir pelo link recebido
-   e conferir a nova senha. Consulte o roteiro em mobile/docs/b02.md.
-3. Registrar resultados antes de avançar para dados e regras Firestore.
+1. Concluir casos adicionais da B02: senha antiga rejeitada após redefinição,
+   e-mail vazio/inválido na recuperação, falha de rede e liberação de reenvio.
+2. Os fluxos principais já foram confirmados em 01/11/2026: Perfil exibiu
+   E-mail verificado após confirmar pelo link; recuperação chegou ao spam,
+   senha foi redefinida e a entrada com a nova senha funcionou.
+3. Consulte mobile/docs/b02.md e registre os casos restantes antes de avançar.
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
 Não recriar a conta de teste apenas para repetir um login.
@@ -97,7 +98,7 @@ Não recriar a conta de teste apenas para repetir um login.
 
 Firestore e suas regras, FastAPI, IA, cálculos financeiros reais e exclusão
 de conta. Recuperação de senha e verificação de e-mail foram implementadas
-na B02 e aguardam validação manual no Android.
+na B02, com fluxos principais validados no Android e casos adicionais pendentes.
 Não considerar a autenticação pronta para produção antes de revisar esses pontos.
 
 ## Como abrir e continuar
