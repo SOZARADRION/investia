@@ -13,7 +13,7 @@ publicar uma versão do aplicativo.
 
 ## Limitações atuais
 
-- Autenticação Firebase implementada em 30/10/2026, aguardando validação de cadastro, login, saída e restauração de sessão no Android. Recuperação de senha, verificação de e-mail e exclusão de conta ainda não foram implementadas.
+- Autenticação Firebase implementada em 30/10/2026, com cadastro, login, saída, restauração de sessão e tratamento de erros validados manualmente no Android em 01/11/2026. Recuperação de senha, verificação de e-mail e exclusão de conta ainda não foram implementadas.
 - Chat sem modelo de IA ou histórico persistente.
 - Simulador sem motor de cálculo financeiro.
 - iOS e web ainda não validados pelo autor nesta entrega.

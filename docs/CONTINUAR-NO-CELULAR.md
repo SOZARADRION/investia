@@ -77,13 +77,14 @@ com nome e e-mail exibidos no Perfil.
 Também foram confirmados: cadastro duplicado rejeitado com a conta original
 preservada, limpeza de Chat e Simulador após sair/entrar e aviso de conexão
 no login sem internet. As capturas pessoais não foram adicionadas ao repositório.
+Após reativar a internet, a entrada funcionou sem fechar o aplicativo.
+A B01 está validada nos testes manuais planejados no Android.
 
 ## Próximo passo exato
 
 Continuar os testes no Android, um por vez:
 
-1. Reativar a internet e confirmar nova entrada após o erro de conexão.
-2. Definir a próxima entrega: recuperação de senha e verificação de e-mail,
+1. Definir a próxima entrega: recuperação de senha e verificação de e-mail,
    antes de avançar para dados persistidos e regras Firestore.
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.

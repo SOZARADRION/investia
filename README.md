@@ -21,14 +21,14 @@ O InvestIA nasce de uma pergunta: como tornar o aprendizado sobre investimentos 
 
 A proposta é reunir explicações, conversas educativas e simulações em uma experiência simples. O desenvolvimento acontece em pequenas entregas, com testes no Android antes de avançar para novas integrações.
 
-**Estado atual:** protótipo local com navegação e dados de demonstração. Cadastro e login agora usam Firebase Authentication, com validação no Android pendente; o Chat usa uma resposta fixa; o Simulador confere campos, mas ainda não calcula resultados. Não há conexão com bancos, IA ou dados de mercado.
+**Estado atual:** protótipo local com navegação e dados de demonstração. Cadastro e login agora usam Firebase Authentication, com os fluxos manuais da B01 validados no Android; o Chat usa uma resposta fixa; o Simulador confere campos, mas ainda não calcula resultados. Não há conexão com bancos, IA ou dados de mercado.
 
 ## O que já funciona
 
 | Área | Experiência disponível |
 | --- | --- |
 | Boas-vindas | Apresentação e acesso ao login e cadastro |
-| Login e cadastro | Firebase Authentication por e-mail/senha; validação no Android pendente |
+| Login e cadastro | Firebase Authentication por e-mail/senha; fluxos manuais B01 validados no Android |
 | Início | Conteúdo educativo e atalhos para as ferramentas |
 | Chat | Pergunta de exemplo, resposta fixa e limpeza da conversa |
 | Simulador | Aporte, prazo e taxa hipotética com validação de preenchimento |
@@ -88,7 +88,7 @@ investia/
 - [x] A02 — Quatro abas e validação funcional principal no Android.
 - [x] Revisar temas, fonte ampliada e navegação pelo botão Voltar no Android.
 - [ ] Ampliar os casos de validação do Simulador.
-- [ ] Validar no Android a integração Firebase Authentication já implementada.
+- [x] Validar no Android os fluxos da B01 com Firebase Authentication.
 - [ ] Implementar API FastAPI e cálculos determinísticos com testes.
 - [ ] Integrar funcionalidades de IA após validar a base do produto.
 
