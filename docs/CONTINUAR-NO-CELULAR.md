@@ -74,13 +74,17 @@ Voltar após sair levou ao Expo Go, sem acesso às abas protegidas.
 Uma senha incorreta foi rejeitada; a senha correta permitiu nova entrada,
 com nome e e-mail exibidos no Perfil.
 
+Também foram confirmados: cadastro duplicado rejeitado com a conta original
+preservada, limpeza de Chat e Simulador após sair/entrar e aviso de conexão
+no login sem internet. As capturas pessoais não foram adicionadas ao repositório.
+
 ## Próximo passo exato
 
 Continuar os testes no Android, um por vez:
 
-1. Conferir cadastro duplicado: rejeitar o e-mail já cadastrado sem alterar a conta.
-2. Conferir falha de rede: mensagem de erro sem liberar acesso indevido.
-3. Conferir limpeza do Chat e Simulador após sair da conta real e entrar novamente.
+1. Reativar a internet e confirmar nova entrada após o erro de conexão.
+2. Definir a próxima entrega: recuperação de senha e verificação de e-mail,
+   antes de avançar para dados persistidos e regras Firestore.
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
 Não recriar a conta de teste apenas para repetir um login.
