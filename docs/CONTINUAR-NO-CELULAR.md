@@ -92,9 +92,11 @@ Continuar os testes no Android, um por vez:
    senha foi redefinida e a entrada com a nova senha funcionou.
    O usuário também confirmou rejeição da senha antiga e os avisos para
    e-mail vazio e inválido na recuperação.
-3. Próxima entrega a definir com o usuário: Firestore com regras restritivas
-   e armazenamento mínimo de dados. Não criar banco ou publicar regras sem
-   preparar e conferir o escopo dessa entrega.
+3. B03 iniciada em 02/11/2026: regras locais em firebase/firestore.rules e
+   escopo em mobile/docs/b03.md. O usuário confirmou que não existe banco.
+   Próximo passo: orientar criação de Firestore Standard em modo Produção,
+   conferir localização antes de concluir, publicar e testar as regras antes
+   de implementar armazenamento de perfil no aplicativo.
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
 Não recriar a conta de teste apenas para repetir um login.
