@@ -84,14 +84,17 @@ A B01 está validada nos testes manuais planejados no Android.
 
 Continuar os testes no Android, um por vez:
 
-1. Após a pausa para almoço de 01/11/2026, retomar a B02 pelos testes de
-   recuperação sem internet e liberação do reenvio após 60 segundos.
+1. B02 concluída nos testes manuais em 02/11/2026: recuperação sem internet
+   mostrou aviso de conexão; após reconectar, a solicitação iniciou a contagem
+   e o botão voltou a ficar disponível ao final dos 60 segundos.
 2. Os fluxos principais já foram confirmados em 01/11/2026: Perfil exibiu
    E-mail verificado após confirmar pelo link; recuperação chegou ao spam,
    senha foi redefinida e a entrada com a nova senha funcionou.
    O usuário também confirmou rejeição da senha antiga e os avisos para
    e-mail vazio e inválido na recuperação.
-3. Consulte mobile/docs/b02.md e registre os casos restantes antes de avançar.
+3. Próxima entrega a definir com o usuário: Firestore com regras restritivas
+   e armazenamento mínimo de dados. Não criar banco ou publicar regras sem
+   preparar e conferir o escopo dessa entrega.
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
 Não recriar a conta de teste apenas para repetir um login.
@@ -100,7 +103,7 @@ Não recriar a conta de teste apenas para repetir um login.
 
 Firestore e suas regras, FastAPI, IA, cálculos financeiros reais e exclusão
 de conta. Recuperação de senha e verificação de e-mail foram implementadas
-na B02, com fluxos principais validados no Android e casos adicionais pendentes.
+na B02, com os testes manuais planejados validados no Android em 02/11/2026.
 Não considerar a autenticação pronta para produção antes de revisar esses pontos.
 
 ## Como abrir e continuar

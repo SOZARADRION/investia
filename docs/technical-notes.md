@@ -13,7 +13,7 @@ publicar uma versão do aplicativo.
 
 ## Limitações atuais
 
-- Autenticação Firebase implementada em 30/10/2026, com cadastro, login, saída, restauração de sessão e tratamento de erros validados manualmente no Android em 01/11/2026. Recuperação de senha e verificação de e-mail implementadas na B02, aguardando testes no Android. Exclusão de conta ainda não implementada.
+- Autenticação Firebase implementada em 30/10/2026, com cadastro, login, saída, restauração de sessão e tratamento de erros validados manualmente no Android em 01/11/2026. Recuperação de senha e verificação de e-mail da B02 validadas nos testes manuais no Android em 02/11/2026. Exclusão de conta ainda não implementada.
 - Chat sem modelo de IA ou histórico persistente.
 - Simulador sem motor de cálculo financeiro.
 - iOS e web ainda não validados pelo autor nesta entrega.
