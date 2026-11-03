@@ -99,8 +99,9 @@ Continuar os testes no Android, um por vez:
    verificado permitido, outra conta negada e dono não verificado negado.
    O workflow Firestore rules passou: 10 testes, zero falhas, execução
    https://github.com/SOZARADRION/investia/actions/runs/41554687071.
-   Próximo passo: usuário publicar as regras já coladas no console e confirmar;
-   depois implementar o perfil no app. Não preencher datas manuais no
+   O usuário confirmou a publicação no console ao encerrar a sessão de
+   02/11/2026. Próximo passo: implementar e testar o perfil no app.
+   Não preencher datas manuais no
    simulador como substituto de serverTimestamp().
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
