@@ -97,10 +97,11 @@ Continuar os testes no Android, um por vez:
    as regras no editor; elas ainda não foram publicadas. O laboratório do
    console confirmou os quatro testes de leitura: anônimo negado, dono
    verificado permitido, outra conta negada e dono não verificado negado.
-   Próximo passo: conferir o workflow Firestore rules com os testes de
-   gravação em emulador; depois orientar publicação das regras e implementar
-   o perfil no app. Não preencher datas manuais no simulador como substituto
-   de serverTimestamp().
+   O workflow Firestore rules passou: 10 testes, zero falhas, execução
+   https://github.com/SOZARADRION/investia/actions/runs/41554687071.
+   Próximo passo: usuário publicar as regras já coladas no console e confirmar;
+   depois implementar o perfil no app. Não preencher datas manuais no
+   simulador como substituto de serverTimestamp().
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
 Não recriar a conta de teste apenas para repetir um login.
