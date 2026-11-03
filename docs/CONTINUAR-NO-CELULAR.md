@@ -93,10 +93,14 @@ Continuar os testes no Android, um por vez:
    O usuário também confirmou rejeição da senha antiga e os avisos para
    e-mail vazio e inválido na recuperação.
 3. B03 iniciada em 02/11/2026: regras locais em firebase/firestore.rules e
-   escopo em mobile/docs/b03.md. O usuário confirmou que não existe banco.
-   Próximo passo: orientar criação de Firestore Standard em modo Produção,
-   conferir localização antes de concluir, publicar e testar as regras antes
-   de implementar armazenamento de perfil no aplicativo.
+   escopo em mobile/docs/b03.md. O usuário criou o banco `(default)` e colou
+   as regras no editor; elas ainda não foram publicadas. O laboratório do
+   console confirmou os quatro testes de leitura: anônimo negado, dono
+   verificado permitido, outra conta negada e dono não verificado negado.
+   Próximo passo: conferir o workflow Firestore rules com os testes de
+   gravação em emulador; depois orientar publicação das regras e implementar
+   o perfil no app. Não preencher datas manuais no simulador como substituto
+   de serverTimestamp().
 
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
 Não recriar a conta de teste apenas para repetir um login.

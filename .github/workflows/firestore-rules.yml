@@ -1,0 +1,33 @@
+name: Firestore rules
+
+on:
+  push:
+    branches: [master]
+    paths: ['firebase/**', '.github/workflows/firestore-rules.yml']
+  pull_request:
+    paths: ['firebase/**', '.github/workflows/firestore-rules.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  isolated-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: firebase
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: firebase/package-lock.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm test
