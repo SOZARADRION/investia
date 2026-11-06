@@ -107,9 +107,21 @@ Continuar os testes no Android, um por vez:
 Não compartilhar senhas nesta conversa nem salvá-las nos documentos.
 Não recriar a conta de teste apenas para repetir um login.
 
+## Retomada em 06/11/2026
+
+Implementada a leitura e gravação explícita do nome em users/{uid}, no Perfil,
+para contas verificadas. O usuário validou no Android ausência, criação,
+atualização, persistência ao reabrir, falha offline sem alteração do registro,
+recuperação com rede e troca entre duas contas com nomes independentes.
+As gravações reais foram feitas pelo usuário no aplicativo.
+As regras já foram publicadas pelo usuário em 02/11; os testes anteriores
+do emulador passaram. TypeScript e lint passaram nesta implementação.
+Próximo passo: conferir campo só com espaços e conta não verificada no app;
+depois escolher a próxima entrega. FastAPI e IA ainda não foram iniciadas.
+
 ## O que ainda não foi implementado
 
-Firestore e suas regras, FastAPI, IA, cálculos financeiros reais e exclusão
+FastAPI, IA, cálculos financeiros reais e exclusão
 de conta. Recuperação de senha e verificação de e-mail foram implementadas
 na B02, com os testes manuais planejados validados no Android em 02/11/2026.
 Não considerar a autenticação pronta para produção antes de revisar esses pontos.

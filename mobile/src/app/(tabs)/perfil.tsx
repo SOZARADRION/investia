@@ -7,6 +7,7 @@ import { authErrorMessage } from '@/services/auth-errors';
 import { useAuthSession } from '@/components/auth-session';
 import { Body, Button, Card, Screen } from '@/components/investia-ui';
 import { useDemoSession } from '@/components/demo-session';
+import { SavedProfile } from '@/components/saved-profile';
 export default function PerfilScreen() {
   const { clear } = useDemoSession();
   const { user, emailVerified, refreshVerification } = useAuthSession();
@@ -51,6 +52,7 @@ export default function PerfilScreen() {
         <Button label={busy ? 'Aguarde…' : 'Já confirmei meu e-mail'} disabled={busy} onPress={checkVerification} />
       </>}
     </Card>
+    {emailVerified && user && <SavedProfile key={user.uid} uid={user.uid} busy={busy} setBusy={setBusy} />}
     <Card title="Preferências">
       <Body>A aparência destas quatro abas acompanha o tema claro ou escuro do seu celular.</Body>
       <Body>Preferências de conta e histórico estarão disponíveis em etapas futuras.</Body>

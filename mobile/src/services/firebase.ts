@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getApp, getApps, initializeApp } from 'firebase/app';
 import { getAuth, getReactNativePersistence, initializeAuth } from 'firebase/auth';
 import { Platform } from 'react-native';
+import { getFirestore } from 'firebase/firestore';
 
 // Configuração pública do aplicativo cliente; não contém chave administrativa.
 const app = getApps().length ? getApp() : initializeApp({
@@ -24,4 +25,5 @@ function createAuth() {
 }
 
 export const auth = createAuth();
+export const db = getFirestore(app);
 auth.languageCode = 'pt-BR';
