@@ -1,0 +1,1 @@
+"""API educativa do InvestIA."""

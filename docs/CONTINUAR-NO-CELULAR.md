@@ -119,7 +119,11 @@ do emulador passaram. TypeScript e lint passaram nesta implementação.
 Também confirmados: campo só com espaços desativa Salvar nome; conta não
 verificada mostra Confirme seu e-mail e não mostra Meu perfil salvo.
 Matriz manual B03 concluída. Próximo passo: escolher a próxima entrega.
-FastAPI e IA ainda não foram iniciadas.
+FastAPI iniciada na C01: API local em backend, GET /health, três testes
+aprovados e dependências isoladas e registradas. Guia em backend/README.md
+e escopo em docs/c01.md. O Expo ainda não chama a API; cálculos e IA ainda
+não foram implementados. Próximo passo: conferir /health no navegador do
+notebook e iniciar o motor do simulador com testes.
 
 ## O que ainda não foi implementado
 

@@ -33,7 +33,7 @@ A proposta é reunir explicações, conversas educativas e simulações em uma e
 | Início | Conteúdo educativo e atalhos para as ferramentas |
 | Chat | Pergunta de exemplo, resposta fixa e limpeza da conversa |
 | Simulador | Aporte, prazo e taxa hipotética com validação de preenchimento |
-| Perfil | Informações da demonstração e saída com limpeza dos dados das abas |
+| Perfil | Nome salvo no Firestore por conta verificada, leitura e edição; testes B03 validados no Android |
 
 As quatro abas acompanham o tema claro ou escuro do aparelho. A troca de tema, a fonte ampliada em dois níveis e a navegação pelo botão Voltar foram validadas manualmente no Android em 30/10/2026.
 
@@ -41,7 +41,9 @@ As quatro abas acompanham o tema claro ou escuro do aparelho. A troca de tema, a
 
 **Implementadas:** React Native, Expo SDK 58, TypeScript em modo estrito, Expo Router e integração Firebase Authentication.
 
-**Planejadas:** Firestore para dados e Python com FastAPI para regras de negócio e cálculos. Essas integrações ainda não foram implementadas.
+**Dados:** Firestore para o perfil mínimo, com regras de acesso por UID e e-mail verificado.
+
+**API local:** Python com FastAPI, primeira rota de status em `backend/`. O app ainda não chama a API. Cálculos serão uma próxima etapa. Consulte o [guia da API](backend/README.md).
 
 ## Executar no Windows
 
@@ -80,7 +82,7 @@ investia/
 │   ├── src/components/        # Componentes e sessão demonstrativa
 │   ├── assets/                # Recursos visuais do aplicativo
 │   └── docs/                  # Entregas e validação no Android
-└── backend/                   # Pasta reservada; sem API implementada
+└── backend/                   # API FastAPI local e testes
 ```
 
 ## Próximas etapas
@@ -91,6 +93,7 @@ investia/
 - [ ] Ampliar os casos de validação do Simulador.
 - [x] Validar no Android os fluxos da B01 com Firebase Authentication.
 - [x] Validar recuperação de senha e verificação de e-mail da [B02](mobile/docs/b02.md) no Android.
+- [x] B03 — Perfil mínimo no Firestore e testes no Android.
 - [ ] Implementar API FastAPI e cálculos determinísticos com testes.
 - [ ] Integrar funcionalidades de IA após validar a base do produto.
 
