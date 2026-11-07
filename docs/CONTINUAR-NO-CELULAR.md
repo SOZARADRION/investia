@@ -116,8 +116,10 @@ recuperação com rede e troca entre duas contas com nomes independentes.
 As gravações reais foram feitas pelo usuário no aplicativo.
 As regras já foram publicadas pelo usuário em 02/11; os testes anteriores
 do emulador passaram. TypeScript e lint passaram nesta implementação.
-Próximo passo: conferir campo só com espaços e conta não verificada no app;
-depois escolher a próxima entrega. FastAPI e IA ainda não foram iniciadas.
+Também confirmados: campo só com espaços desativa Salvar nome; conta não
+verificada mostra Confirme seu e-mail e não mostra Meu perfil salvo.
+Matriz manual B03 concluída. Próximo passo: escolher a próxima entrega.
+FastAPI e IA ainda não foram iniciadas.
 
 ## O que ainda não foi implementado
 
