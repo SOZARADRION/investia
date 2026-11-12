@@ -5,9 +5,12 @@
 Motor de cálculo implementado na API local: POST /simulations, aportes no
 fim do mês, taxa hipotética constante, sem impostos/taxas/inflação. Decimal
 com arredondamento só no resultado. Limites e contrato em docs/c02.md.
-32 testes passaram. C01 já confirmada pelo usuário no navegador na sessão
-anterior. Próximo passo: testar exemplo C02 em /docs no notebook; depois
-conectar o Android. A tela do aplicativo ainda não calcula.
+32 testes da API passaram. C01 confirmada pelo usuário no navegador; na C02
+confirmados exemplo, taxa zero, prazo fracionário e aporte negativo.
+Tela Android conectada à API local: configuração em .env.local, exemplo
+versionado em .env.example. TypeScript, lint e três testes do serviço cliente
+passaram. Próximo passo: validar o Simulador no Android, começando em
+100,00 / 12 / 0,5; resultado esperado 1.233,56. Matriz completa em docs/c02.md.
 
 Este documento é um resumo de continuidade da conversa, não uma transcrição
 integral. Reúne decisões, trabalho realizado, testes e próximo passo, sem
