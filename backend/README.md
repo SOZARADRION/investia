@@ -1,6 +1,6 @@
 # API InvestIA — C01
 
-Primeira etapa local: FastAPI e GET /health. Não acessa Firebase, dados
+API local: FastAPI, GET /health e POST /simulations. Não acessa Firebase, dados
 pessoais ou mercado. O aplicativo ainda não chama esta API.
 O status confirma apenas que o processo responde, sem testar dependências.
 
@@ -22,6 +22,12 @@ Para encerrar o servidor, pressione Ctrl+C no terminal.
 
 O servidor usa apenas o endereço local do notebook nesta etapa. Nenhuma
 hospedagem ou serviço pago é necessário. A conexão Android será outra etapa.
+
+## Testar o cálculo no navegador
+
+Em /docs, expanda POST /simulations e clique em Try it out. Use o exemplo
+100.00 / 12 / 0.5 e clique em Execute. O saldo final esperado é 1233.56.
+Detalhes de limites, convenções e testes em [C02](../docs/c02.md).
 
 requirements.txt contém as dependências de execução; requirements-dev.txt
 inclui testes; requirements-lock.txt registra todas as versões validadas.

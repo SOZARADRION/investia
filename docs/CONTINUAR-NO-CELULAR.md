@@ -1,5 +1,14 @@
 # InvestIA — registro para continuar pelo celular
 
+## Retomada em 12/11/2026 — C02
+
+Motor de cálculo implementado na API local: POST /simulations, aportes no
+fim do mês, taxa hipotética constante, sem impostos/taxas/inflação. Decimal
+com arredondamento só no resultado. Limites e contrato em docs/c02.md.
+32 testes passaram. C01 já confirmada pelo usuário no navegador na sessão
+anterior. Próximo passo: testar exemplo C02 em /docs no notebook; depois
+conectar o Android. A tela do aplicativo ainda não calcula.
+
 Este documento é um resumo de continuidade da conversa, não uma transcrição
 integral. Reúne decisões, trabalho realizado, testes e próximo passo, sem
 senhas, dados de contas de teste ou capturas pessoais.
